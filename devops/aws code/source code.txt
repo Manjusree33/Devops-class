@@ -1,0 +1,18 @@
+
+aws sample java code
+
+
+AWS Sample Java Code
+To interact with AWS services using Java, you can utilize the AWS SDK for Java. Here's a simple example to list S3 buckets:
+
+import software.amazon.awssdk.services.s3.S3Client;
+import software.amazon.awssdk.services.s3.model.Bucket;
+
+public class S3Example {
+    public static void main(String[] args) {
+        S3Client s3 = S3Client.create();
+        for (Bucket bucket : s3.listBuckets().buckets()) {
+            System.out.println(bucket.name());
+        }
+    }
+}
